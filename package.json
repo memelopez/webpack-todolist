@@ -1,5 +1,5 @@
 {
-  "name": "webpackSetup",
+  "name": "webpack-todolist",
   "version": "1.0.0",
   "description": "Setup a project with webpack",
   "private": true,
