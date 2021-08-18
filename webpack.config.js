@@ -3,17 +3,14 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
-  // entry: './src/index.js',
-  entry: {
-    index: './src/index.js',
-  },
+  entry: './src/index.js',
   devtool: 'inline-source-map',
   devServer: {
     contentBase: './dist',
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Development',
+      title: 'Webpack To-do List',
       template: './src/index.html',
     }),
   ],
