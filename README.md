@@ -4,16 +4,21 @@
 
 > An application of a book list.
 
-<img src="https://user-images.githubusercontent.com/6587226/129976503-722e7510-1632-4d1d-9ce6-a7b7f9a8808a.png" width="600">
+<img src="https://user-images.githubusercontent.com/6587226/130110317-de33320c-b5e6-4271-bd81-45f143f17543.png" width="600">
+<img src="https://user-images.githubusercontent.com/6587226/130110388-6ff0e813-c6d9-4378-bdcd-383226783cc2.png" width="600">
+<img src="https://user-images.githubusercontent.com/6587226/130110446-dba97355-9f64-44f2-a34b-3854ac32f1c3.png" width="600">
 
 To-do list app. For storing your shores and responsabilities.  
 
 ## Built With
 
 - HTML
+- CSS
 - JavaScript
 - Webpack
 - Bootstrap
+- A bootswatch theme
+- Several icons from font awesome
 
 ## Live Demo
 
