@@ -13,15 +13,30 @@ document.querySelector('#addTaskForm').addEventListener('submit', (e) => {
   // Get form values
   const taskDescription = document.querySelector('#taskDesc').value.trim();
   if (!validateDescription(taskDescription)) {
-    console.log('Error- empty description');
+    console.log('Error - empty description');
   } else {
     // Add task
     UI.addTaskStore(taskDescription);
+    // reloads page
+    // eslint-disable-next-line no-restricted-globals
+    location.reload();
   }
+});
 
-  // reloads page
-  // eslint-disable-next-line no-restricted-globals
-  location.reload();
+// Event: when icon is clicked to add task
+document.querySelector('#clickEnterIcon').addEventListener('click', () => {
+  // Get form values
+  const taskDescription = document.querySelector('#taskDesc').value.trim();
+  if (!validateDescription(taskDescription)) {
+    console.log('Error - empty description');
+  } else {
+    // Add task
+    UI.addTaskStore(taskDescription);
+
+    // reloads page
+    // eslint-disable-next-line no-restricted-globals
+    location.reload();
+  }
 });
 
 document.querySelector('#task-list').addEventListener('change', (e) => {
