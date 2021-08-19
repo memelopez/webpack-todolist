@@ -27,3 +27,7 @@ body {
   height: 50px;
   background-color: lightyellow;
 }
+
+.noToDos {
+  color: rgb(148, 148, 64);
+}

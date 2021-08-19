@@ -76,7 +76,25 @@ export default class UI {
 
   static addTasksUI(tasks) {
     // Iterates over array tasks to populate HTML list
-    tasks.forEach((task) => this.addTaskToList(task));
+    if (tasks.length === 0) {
+      this.addEmptyToDoMessage();
+    } else {
+      tasks.forEach((task) => this.addTaskToList(task));
+    }
+  }
+
+  static addEmptyToDoMessage() {
+    const list = document.querySelector('#task-list');
+
+    const item = document.createElement('LI'); // creates list item
+    item.className = 'd-flex justify-content-center align-items-center border-bottom border-2 px-2 appItem';
+
+    const p = document.createElement('P');
+    p.className = 'm-0 p-0 noToDos';
+    p.innerHTML = "No to-do's right now";
+
+    item.appendChild(p);
+    list.appendChild(item);
   }
 
   static addTaskToList(task) {
