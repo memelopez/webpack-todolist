@@ -2,7 +2,9 @@
 import Store from './store';
 import Task from './task';
 import taskCompleted from './checkboxes';
-import returnsUncompleted from './isCompleted';
+import removeTask from './removeTask';
+import updateTask from './updateTask';
+import clearCompleted from './clearCompleted';
 
 export default class UI {
   static addApp() {
@@ -229,30 +231,14 @@ export default class UI {
   }
 
   static removeTask(index) {
-    // gets todos from local storage
-    const todos = Store.getTasks();
-
-    todos.splice(index, 1);
-
-    Store.setTasks(todos);
+    removeTask(index);
   }
 
   static updateTask(index, newDesc) {
-    // gets todos from local storage
-    const todos = Store.getTasks();
-    // sets new description in respective index
-    todos[index].description = newDesc;
-    // sets new todos to storage
-    Store.setTasks(todos);
+    updateTask(index, newDesc);
   }
 
   static clearCompleted() {
-    // gets todos from local storage
-    const tasks = Store.getTasks();
-
-    // create new array from filter()
-    const uncompletedTasks = tasks.filter(returnsUncompleted);
-
-    Store.setTasks(uncompletedTasks);
+    clearCompleted();
   }
 }
