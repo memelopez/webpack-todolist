@@ -22,3 +22,8 @@ body {
 .btmDiv {
   height: 65px;
 }
+
+.appItemEdit {
+  height: 50px;
+  background-color: lightyellow;
+}
