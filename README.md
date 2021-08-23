@@ -2,7 +2,7 @@
 
 # To Do List 
 
-> An application of a book list.
+> An application of a to-do list.
 
 <img src="https://user-images.githubusercontent.com/6587226/130110317-de33320c-b5e6-4271-bd81-45f143f17543.png" width="600">
 <img src="https://user-images.githubusercontent.com/6587226/130110388-6ff0e813-c6d9-4378-bdcd-383226783cc2.png" width="600">
