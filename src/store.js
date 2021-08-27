@@ -17,8 +17,8 @@ export default class Store {
   }
 
   static addTask(task) {
-    if (task.description !== undefined && task.completed !== undefined &&
-         task.index !== undefined) {
+    if (task.description !== undefined && task.completed !== undefined
+      && task.index !== undefined) {
       const tasks = this.getTasks();
       tasks.push(task);
       this.setTasks(tasks);
