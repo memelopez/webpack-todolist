@@ -4,9 +4,11 @@ import Store from './store';
 
 export default function removeCompleted(index) {
   // gets todos from local storage
-  const todos = Store.getTasks();
+  if (typeof(index) === 'number') {
+    const todos = Store.getTasks();
 
-  todos.splice(index, 1);
+    todos.splice(index, 1);
 
-  Store.setTasks(todos);
+    Store.setTasks(todos);
+  }
 }
