@@ -17,9 +17,12 @@ export default class Store {
   }
 
   static addTask(task) {
-    const tasks = this.getTasks();
-    tasks.push(task);
-    this.setTasks(tasks);
+    if (task.description !== undefined && task.completed !== undefined &&
+         task.index !== undefined) {
+      const tasks = this.getTasks();
+      tasks.push(task);
+      this.setTasks(tasks);
+    }
   }
 
   // index - saves the total of tasks created ever
