@@ -57,4 +57,30 @@ describe('For Adding Tasks', () => {
       expect(tasks.length).toEqual(2);
     });
   });
+
+  describe('HTML elements appears when showing the tasks', () => {
+    let taskList = document.createElement('ul');
+    beforeEach(() => {
+        taskList.innerHTML = ""
+        let tasks = Store.getTasks();
+        tasks.forEach((task, index) => {
+          taskList.innerHTML += `
+            <li class="${task.completed}">${task.description}</li>
+          `
+        });
+    });
+    test('Check if li children are counted', () => {
+      let tasksListLength = taskList.children.length
+      expect(tasksListLength).toEqual(2);
+    });
+    test('Check if children class are according the completed status', () => {
+      let statusCompleted = taskList.children[0].classList[0]
+      expect(statusCompleted).toEqual("false");
+    });
+    test('Check if children value is according to description text', () => {
+      let tasks = Store.getTasks();
+      let textValueTaskOne = taskList.children[0].textContent
+      expect(textValueTaskOne).toEqual(tasks[0].description);
+    });
+  });
 });
