@@ -161,3 +161,32 @@ describe('For Removing Tasks', () => {
     });
   });
 });
+
+describe('For Editing Tasks', () => {
+  describe('updateTask method from independient JS file', () => {
+    test('One task is already initialized', () => {
+      const tasks = Store.getTasks();
+      expect(tasks.length).toEqual(1);
+    });
+
+    test('The description changes', () => {
+      const newDescription = "This the new description";
+      updateTask(0, newDescription);
+      const tasks = Store.getTasks();
+      expect(tasks[0].description).toEqual(newDescription);
+    });
+
+    test('The new description persists', () => {
+      const newDescription = "This the new description";
+      const tasks = Store.getTasks();
+      expect(tasks[0].description).toEqual(newDescription);
+    });
+
+    test('The new description might be empty', () => {
+      const newDescription = "";
+      updateTask(0, newDescription);
+      const tasks = Store.getTasks();
+      expect(tasks[0].description).toEqual(newDescription);
+    });
+  });
+});
