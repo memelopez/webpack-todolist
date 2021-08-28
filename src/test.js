@@ -170,20 +170,20 @@ describe('For Editing Tasks', () => {
     });
 
     test('The description changes', () => {
-      const newDescription = "This the new description";
+      const newDescription = 'This the new description';
       updateTask(0, newDescription);
       const tasks = Store.getTasks();
       expect(tasks[0].description).toEqual(newDescription);
     });
 
     test('The new description persists', () => {
-      const newDescription = "This the new description";
+      const newDescription = 'This the new description';
       const tasks = Store.getTasks();
       expect(tasks[0].description).toEqual(newDescription);
     });
 
     test('The new description might be empty', () => {
-      const newDescription = "";
+      const newDescription = '';
       updateTask(0, newDescription);
       const tasks = Store.getTasks();
       expect(tasks[0].description).toEqual(newDescription);
@@ -200,7 +200,7 @@ describe('For Updating Tasks.completed Status', () => {
 
     test('Initial completed value is false', () => {
       const tasks = Store.getTasks();
-      const tasksCompleted = tasks[0].completed
+      const tasksCompleted = tasks[0].completed;
       expect(tasksCompleted).toEqual(false);
     });
 
@@ -250,15 +250,15 @@ describe('For Clear All Completed Tasks', () => {
       taskCompleted(idTask, newBooleanValue);
       taskCompleted(idTaskTwo, newBooleanValue);
       const tasks = Store.getTasks();
-      const all_completed_tasks = tasks.filter(task => task.completed === newBooleanValue);
-      expect(all_completed_tasks.length).toEqual(2);
+      const allCompletedTasks = tasks.filter((task) => task.completed === newBooleanValue);
+      expect(allCompletedTasks.length).toEqual(2);
     });
 
     test('All completed tasks persist its value', () => {
       const newBooleanValue = true;
       const tasks = Store.getTasks();
-      const all_completed_tasks = tasks.filter(task => task.completed === newBooleanValue);
-      expect(all_completed_tasks.length).toEqual(2);
+      const allCompletedTasks = tasks.filter((task) => task.completed === newBooleanValue);
+      expect(allCompletedTasks.length).toEqual(2);
     });
 
     test('All completed tasks can be removed', () => {
@@ -269,8 +269,8 @@ describe('For Clear All Completed Tasks', () => {
 
     test('All uncompleted tasks persist', () => {
       const tasks = Store.getTasks();
-      const all_completed_tasks = tasks.filter(task => task.completed === false);
-      expect(tasks.length).toEqual(all_completed_tasks.length);
+      const allCompletedTasks = tasks.filter((task) => task.completed === false);
+      expect(tasks.length).toEqual(allCompletedTasks.length);
     });
   });
 });
