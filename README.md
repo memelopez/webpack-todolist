@@ -30,6 +30,13 @@ Coming soon!
 
 Git clone the repo in your local machine. Run: 'npm install'. When that is finished run 'npm start'.
 
+## Test
+
+If you would like to test our project, run the next command:
+
+```
+npm test
+```
 
 ## Author
 
