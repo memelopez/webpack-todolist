@@ -228,3 +228,49 @@ describe('For Updating Tasks.completed Status', () => {
     });
   });
 });
+
+describe('For Clear All Completed Tasks', () => {
+  describe('clearCompleted method from independient JS file', () => {
+    test('Four task are already initialized', () => {
+      const tasksOne = new Task('This is a description', false, 1);
+      const taskTwo = new Task('This is another description', false, 2);
+      const taskThree = new Task('This is another description', false, 3);
+      Store.addTask(tasksOne);
+      Store.addTask(taskTwo);
+      Store.addTask(taskThree);
+      const tasks = Store.getTasks();
+      const tasksListLength = tasks.length;
+      expect(tasksListLength).toEqual(4);
+    });
+
+    test('Two tasks completed value are false', () => {
+      const idTask = 0;
+      const idTaskTwo = 2;
+      const newBooleanValue = true;
+      taskCompleted(idTask, newBooleanValue);
+      taskCompleted(idTaskTwo, newBooleanValue);
+      const tasks = Store.getTasks();
+      const all_completed_tasks = tasks.filter(task => task.completed === newBooleanValue);
+      expect(all_completed_tasks.length).toEqual(2);
+    });
+
+    test('All completed tasks persist its value', () => {
+      const newBooleanValue = true;
+      const tasks = Store.getTasks();
+      const all_completed_tasks = tasks.filter(task => task.completed === newBooleanValue);
+      expect(all_completed_tasks.length).toEqual(2);
+    });
+
+    test('All completed tasks can be removed', () => {
+      clearCompleted();
+      const tasks = Store.getTasks();
+      expect(tasks.length).toEqual(2);
+    });
+
+    test('All uncompleted tasks persist', () => {
+      const tasks = Store.getTasks();
+      const all_completed_tasks = tasks.filter(task => task.completed === false);
+      expect(tasks.length).toEqual(all_completed_tasks.length);
+    });
+  });
+});
