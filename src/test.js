@@ -1,7 +1,9 @@
 import Task from './task';
 import Store from './store';
-// import UI from './ui';
 import removeTask from './removeTask';
+import updateTask from './updateTask';
+import taskCompleted from './checkboxes';
+import clearCompleted from './clearCompleted';
 
 class MockLocalStorage {
   constructor() {
