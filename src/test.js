@@ -190,3 +190,41 @@ describe('For Editing Tasks', () => {
     });
   });
 });
+
+describe('For Updating Tasks.completed Status', () => {
+  describe('taskCompleted method from independient JS file', () => {
+    test('One task is already initialized', () => {
+      const tasks = Store.getTasks();
+      expect(tasks.length).toEqual(1);
+    });
+
+    test('Initial completed value is false', () => {
+      const tasks = Store.getTasks();
+      const tasksCompleted = tasks[0].completed
+      expect(tasksCompleted).toEqual(false);
+    });
+
+    test('Completed value can change from false to true', () => {
+      const idTask = 0;
+      const newBooleanValue = true;
+      taskCompleted(idTask, newBooleanValue);
+      const tasks = Store.getTasks();
+      expect(tasks[idTask].completed).toEqual(newBooleanValue);
+    });
+
+    test('The new completed value persists', () => {
+      const idTask = 0;
+      const newBooleanValue = true;
+      const tasks = Store.getTasks();
+      expect(tasks[idTask].completed).toEqual(newBooleanValue);
+    });
+
+    test('The new completed value can change again', () => {
+      const idTask = 0;
+      const newBooleanValue = false;
+      taskCompleted(idTask, newBooleanValue);
+      const tasks = Store.getTasks();
+      expect(tasks[idTask].completed).toEqual(newBooleanValue);
+    });
+  });
+});
