@@ -22,7 +22,9 @@ To-do list app. For storing your shores and responsabilities.
 
 ## Live Demo
 
-Coming soon!
+[Click here](https://memelopez.github.io/webpack-todolist/)
+
+
 
 ## Getting Started
 
